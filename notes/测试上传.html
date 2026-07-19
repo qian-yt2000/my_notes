@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>测试上传 - My Notes</title>
+<script>
+  (function() {
+    var theme = localStorage.getItem('notes-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="icon" type="image/x-icon" href="../icon/title.ico">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" title="切换侧边栏">☰</button>
+<div class="top-right-btns">
+  <a href="../index.html" class="home-btn" id="homeBtn" title="返回主目录"><img src="../icon/homepage.svg" alt="首页"></a>
+  <div class="theme-switch" id="themeSwitch" role="switch" aria-checked="false" aria-label="切换日/夜间模式" tabindex="0">
+  <div class="theme-switch-track"></div>
+  <div class="theme-switch-thumb">
+    <img src="../icon/sun.svg" alt="日间模式" id="themeIcon">
+  </div>
+</div>
+</div>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2><span class="sidebar-brand"><img src="../icon/mynote.svg" class="sidebar-logo" alt=""> My Notes</span></h2>
+      <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="收起侧边栏">✕</button>
+    </div>
+    <div class="sidebar-section sidebar-section-toc" id="sidebarToc">
+<h3 class="toc-title"><a href="../home.html" class="sidebar-back" id="sidebarBack" title="返回主目录"><img src="../icon/back.svg" alt="返回" style="width:16px;height:16px;vertical-align:middle;"></a>  目录</h3>
+        
+      </ul>
+    </div>
+    <div class="sidebar-section sidebar-section-nav" id="sidebarNav" style="display:none">
+      <nav>
+        <ul class="note-list">
+          <li><a href="build-notes-site.html">搭建个人笔记网站</a></li>
+<li><a href="《javascript基础》.html">《javascript基础》</a></li>
+<li><a href="学习规划.html">学习规划</a></li>
+<li><a href="测试上传.html" class="active">测试上传</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="content" id="content">
+    <article class="note">
+      <h1>测试上传</h1>
+      <div class="note-body">
+        
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
