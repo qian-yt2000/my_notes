@@ -1,4 +1,4 @@
-﻿# 📒 我的笔记网站
+﻿# 我的笔记网站
 
 基于 Markdown + Python 的个人笔记静态网站，托管在 GitHub Pages 上。
 
