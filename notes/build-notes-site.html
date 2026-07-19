@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>搭建个人笔记网站 - My Notes</title>
+<script>
+  (function() {
+    var theme = localStorage.getItem('notes-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="icon" type="image/x-icon" href="../icon/title.ico">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" title="切换侧边栏">☰</button>
+<div class="top-right-btns">
+  <a href="../index.html" class="home-btn" id="homeBtn" title="返回主目录"><img src="../icon/homepage.svg" alt="首页"></a>
+  <div class="theme-switch" id="themeSwitch" role="switch" aria-checked="false" aria-label="切换日/夜间模式" tabindex="0">
+  <div class="theme-switch-track"></div>
+  <div class="theme-switch-thumb">
+    <img src="../icon/sun.svg" alt="日间模式" id="themeIcon">
+  </div>
+</div>
+</div>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2><span class="sidebar-brand"><img src="../icon/mynote.svg" class="sidebar-logo" alt=""> My Notes</span></h2>
+      <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="收起侧边栏">✕</button>
+    </div>
+    <div class="sidebar-section sidebar-section-toc" id="sidebarToc">
+<h3 class="toc-title"><a href="../home.html" class="sidebar-back" id="sidebarBack" title="返回主目录"><img src="../icon/back.svg" alt="返回" style="width:16px;height:16px;vertical-align:middle;"></a>  目录</h3>
+        <li class="toc-item toc-lv1"><a href="#_1" class="toc-link">搭建个人笔记网站</a></li>
+  <li class="toc-item toc-lv2"><a href="#_2" class="toc-link">为什么选择静态网站</a></li>
+  <li class="toc-item toc-lv2"><a href="#_3" class="toc-link">项目结构</a></li>
+  <li class="toc-item toc-lv2"><a href="#_4" class="toc-link">使用流程</a></li>
+    <li class="toc-item toc-lv3"><a href="#1" class="toc-link">1. 写笔记</a></li>
+    <li class="toc-item toc-lv3"><a href="#2" class="toc-link">2. 构建网站</a></li>
+    <li class="toc-item toc-lv3"><a href="#3" class="toc-link">3. 本地预览</a></li>
+    <li class="toc-item toc-lv3"><a href="#4-github" class="toc-link">4. 部署到 GitHub</a></li>
+  <li class="toc-item toc-lv2"><a href="#markdown" class="toc-link">Markdown 写作建议</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section sidebar-section-nav" id="sidebarNav" style="display:none">
+      <nav>
+        <ul class="note-list">
+          <li><a href="build-notes-site.html" class="active">搭建个人笔记网站</a></li>
+<li><a href="《javascript基础》.html">《javascript基础》</a></li>
+<li><a href="学习规划.html">学习规划</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="content" id="content">
+    <article class="note">
+      <h1>搭建个人笔记网站</h1>
+      <div class="note-body">
+        <h1 id="_1">搭建个人笔记网站</h1>
+<p>使用 GitHub Pages 托管静态笔记网站的完整流程。</p>
+<h2 id="_2">为什么选择静态网站</h2>
+<ul>
+<li><strong>免费托管</strong>：GitHub Pages 提供免费的静态网站托管</li>
+<li><strong>零服务器维护</strong>：不需要管理服务器或数据库</li>
+<li><strong>版本控制</strong>：所有笔记自动纳入 Git 版本管理</li>
+<li><strong>极速加载</strong>：纯静态 HTML，没有后端延迟</li>
+</ul>
+<h2 id="_3">项目结构</h2>
+<pre><code>notes-site/
+├── notes/          ← 在这里写 Markdown 笔记
+├── build.js        ← 构建脚本
+└── output/         ← 生成的静态网站
+    ├── index.html
+    ├── style.css
+    └── notes/
+</code></pre>
+<h2 id="_4">使用流程</h2>
+<h3 id="1">1. 写笔记</h3>
+<p>在 <code>notes/</code> 目录下创建 <code>.md</code> 文件，用 Markdown 格式写作。</p>
+<h3 id="2">2. 构建网站</h3>
+<pre><code class="language-bash">node build.js
+</code></pre>
+<h3 id="3">3. 本地预览</h3>
+<p>直接用浏览器打开 <code>output/index.html</code>。</p>
+<h3 id="4-github">4. 部署到 GitHub</h3>
+<p>将 <code>output/</code> 目录推送到 GitHub 仓库的 <code>gh-pages</code> 分支，或设置 GitHub Pages 指向 <code>main</code> 分支的 <code>/output</code> 目录。</p>
+<h2 id="markdown">Markdown 写作建议</h2>
+<ul>
+<li>用 <code>#</code> 标题作为文章标题</li>
+<li>代码块指定语言可获得语法高亮样式</li>
+<li>善用列表和表格组织信息</li>
+<li>添加合适的空行让排版更舒适</li>
+</ul>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《javascript基础》 - My Notes</title>
+<script>
+  (function() {
+    var theme = localStorage.getItem('notes-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="icon" type="image/x-icon" href="../icon/title.ico">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" title="切换侧边栏">☰</button>
+<div class="top-right-btns">
+  <a href="../index.html" class="home-btn" id="homeBtn" title="返回主目录"><img src="../icon/homepage.svg" alt="首页"></a>
+  <div class="theme-switch" id="themeSwitch" role="switch" aria-checked="false" aria-label="切换日/夜间模式" tabindex="0">
+  <div class="theme-switch-track"></div>
+  <div class="theme-switch-thumb">
+    <img src="../icon/sun.svg" alt="日间模式" id="themeIcon">
+  </div>
+</div>
+</div>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2><span class="sidebar-brand"><img src="../icon/mynote.svg" class="sidebar-logo" alt=""> My Notes</span></h2>
+      <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="收起侧边栏">✕</button>
+    </div>
+    <div class="sidebar-section sidebar-section-toc" id="sidebarToc">
+<h3 class="toc-title"><a href="../home.html" class="sidebar-back" id="sidebarBack" title="返回主目录"><img src="../icon/back.svg" alt="返回" style="width:16px;height:16px;vertical-align:middle;"></a>  目录</h3>
+        <li class="toc-item toc-lv1"><a href="#javascript" class="toc-link">《javascript基础》</a></li>
+  <li class="toc-item toc-lv2"><a href="#1" class="toc-link">1常用变量：弱语言，无需声明变量类型</a></li>
+    <li class="toc-item toc-lv3"><a href="#letconst" class="toc-link">关键字：let，const（常量）；</a></li>
+  <li class="toc-item toc-lv2"><a href="#2" class="toc-link">2 输出语句：</a></li>
+  <li class="toc-item toc-lv2"><a href="#3" class="toc-link">3数据类型</a></li>
+    <li class="toc-item toc-lv3"><a href="#number-booleanstringnullundifined" class="toc-link">number ，boolean，string，null，undifined</a></li>
+  <li class="toc-item toc-lv2"><a href="#4" class="toc-link">4模板字符串</a></li>
+  <li class="toc-item toc-lv2"><a href="#_1" class="toc-link">``</a></li>
+  <li class="toc-item toc-lv2"><a href="#5" class="toc-link">5函数</a></li>
+      <li class="toc-item toc-lv4"><a href="#js" class="toc-link">js是弱语言，函数、形参无需定义类型；</a></li>
+  <li class="toc-item toc-lv2"><a href="#6" class="toc-link">6自定义对象</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section sidebar-section-nav" id="sidebarNav" style="display:none">
+      <nav>
+        <ul class="note-list">
+          <li><a href="build-notes-site.html">搭建个人笔记网站</a></li>
+<li><a href="《javascript基础》.html" class="active">《javascript基础》</a></li>
+<li><a href="学习规划.html">学习规划</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="content" id="content">
+    <article class="note">
+      <h1>《javascript基础》</h1>
+      <div class="note-body">
+        <h1 id="javascript">《javascript基础》</h1>
+<h2 id="1">1常用变量：弱语言，无需声明变量类型</h2>
+<h3 id="letconst">关键字：let，const（常量）；</h3>
+<h2 id="2">2 输出语句：</h2>
+<ol>
+<li>alert();</li>
+<li>console.log();</li>
+<li>document.write();</li>
+</ol>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+    let a=100;
+    a=&quot;hello world&quot;;
+    a=true;
+    alert(a);
+    console.log(a);
+
+    const PI=3.14;
+    document.write(PI);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="3">3数据类型</h2>
+<h3 id="number-booleanstringnullundifined">number ，boolean，string，null，undifined</h3>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;script&gt;
+    alert(typeof &quot;你好&quot;);
+    alert(typeof 100);
+    alert(typeof null);
+    alert(typeof true);
+
+    //模板字符串
+    let name=&quot;qian&quot;;
+    console.log(`i am ${name}`);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 id="4">4模板字符串</h2>
+<h2 id="_1">``</h2>
+<p>(<code>xxx xxx xxxx ${} xx</code>)</p>
+<h2 id="5">5函数</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+    //函数
+    function add(a, b) {
+        return a + b;
+    }
+    let res=add(100,200);
+    console.log(res);
+
+    //匿名函数
+    let add1 =function(a,b){
+        return a + b;
+    }
+    let res2=add1(200,300);
+    console.log(res2);
+
+    let add3 =(a,b)=&gt;{
+        return a + b;
+    }
+    let res3=add3(200,600);
+    console.log(res3);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="js">js是弱语言，函数、形参无需定义类型；</h4>
+<h2 id="6">6自定义对象</h2>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+    user={
+        name:&quot;qyt&quot;,
+        age:20,
+        gender:&quot;male&quot;,
+        sing:function(){
+            alert(this.name+&quot;在唱歌&quot;);},
+        dance:()=&gt;{//使用箭头函数时，无法使用this.name
+            alert(this.name+&quot;在跳舞&quot;);
+        }
+    }
+    user.sing();
+    console.log(user.name);
+    user.dance();
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>

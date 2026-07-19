@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学习规划 - My Notes</title>
+<script>
+  (function() {
+    var theme = localStorage.getItem('notes-theme') || 'light';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="icon" type="image/x-icon" href="../icon/title.ico">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<button class="sidebar-toggle" id="sidebarToggle" title="切换侧边栏">☰</button>
+<div class="top-right-btns">
+  <a href="../index.html" class="home-btn" id="homeBtn" title="返回主目录"><img src="../icon/homepage.svg" alt="首页"></a>
+  <div class="theme-switch" id="themeSwitch" role="switch" aria-checked="false" aria-label="切换日/夜间模式" tabindex="0">
+  <div class="theme-switch-track"></div>
+  <div class="theme-switch-thumb">
+    <img src="../icon/sun.svg" alt="日间模式" id="themeIcon">
+  </div>
+</div>
+</div>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <h2><span class="sidebar-brand"><img src="../icon/mynote.svg" class="sidebar-logo" alt=""> My Notes</span></h2>
+      <button class="sidebar-collapse-btn" id="sidebarCollapseBtn" title="收起侧边栏">✕</button>
+    </div>
+    <div class="sidebar-section sidebar-section-toc" id="sidebarToc">
+<h3 class="toc-title"><a href="../home.html" class="sidebar-back" id="sidebarBack" title="返回主目录"><img src="../icon/back.svg" alt="返回" style="width:16px;height:16px;vertical-align:middle;"></a>  目录</h3>
+          <li class="toc-item toc-lv2"><a href="#1" class="toc-link">1数组</a></li>
+  <li class="toc-item toc-lv2"><a href="#_1" class="toc-link">第一部分：基础一级指针（判断输出 + 画图）</a></li>
+    <li class="toc-item toc-lv3"><a href="#1_1" class="toc-link">题 1</a></li>
+    <li class="toc-item toc-lv3"><a href="#2" class="toc-link">题 2</a></li>
+  <li class="toc-item toc-lv2"><a href="#_2" class="toc-link">第二部分：函数传一级指针（修改普通变量）</a></li>
+    <li class="toc-item toc-lv3"><a href="#3" class="toc-link">题 3</a></li>
+  <li class="toc-item toc-lv2"><a href="#_3" class="toc-link">第三部分：二级指针核心题（你最疑惑的修改指针指向）</a></li>
+    <li class="toc-item toc-lv3"><a href="#4" class="toc-link">题 4（对标你原来的代码）</a></li>
+    <li class="toc-item toc-lv3"><a href="#5" class="toc-link">题 5</a></li>
+  <li class="toc-item toc-lv2"><a href="#_4" class="toc-link">第四部分：易混辨析选择题（检验概念）</a></li>
+    <li class="toc-item toc-lv3"><a href="#6" class="toc-link">题 6 单选</a></li>
+    <li class="toc-item toc-lv3"><a href="#7" class="toc-link">题 7 单选</a></li>
+  <li class="toc-item toc-lv2"><a href="#_5" class="toc-link">第五部分：代码改错</a></li>
+    <li class="toc-item toc-lv3"><a href="#8" class="toc-link">题 8</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-section sidebar-section-nav" id="sidebarNav" style="display:none">
+      <nav>
+        <ul class="note-list">
+          <li><a href="build-notes-site.html">搭建个人笔记网站</a></li>
+<li><a href="《javascript基础》.html">《javascript基础》</a></li>
+<li><a href="学习规划.html" class="active">学习规划</a></li>
+        </ul>
+      </nav>
+    </div>
+  </aside>
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <main class="content" id="content">
+    <article class="note">
+      <h1>学习规划</h1>
+      <div class="note-body">
+        <ol>
+<li>C Primer Plus（第6版）Linux开发核心知识精准规划（仅实战刚需）</li>
+</ol>
+<p>## 一、整体说明</p>
+<p>本章节仅整理<strong>Linux C开发、嵌入式、工程实操必须用到的知识点</strong>，剔除教材冗余理论、应试冷门知识点，完全适配8天实操学习计划，所有内容均为后续代码开发、项目实战、底层原理铺垫的核心刚需内容。</p>
+<p>## 二、各章节精准刚需知识点（仅学有用内容）</p>
+<p>### 第10章 指针（核心重中之重，Linux底层必备）</p>
+<p><strong>必学刚需知识</strong>：</p>
+<ul>
+<li>基础指针原理：指针变量定义、地址取值（&amp;）、解引用（*）、指针赋值与传参</li>
+<li>指针与数组：数组首地址、指针遍历数组、数组名与指针的区别</li>
+<li>指针数组 vs 数组指针：定义格式、本质区别、实际使用场景（高频考点+开发常用）</li>
+<li>二级指针：二级指针定义、用于修改一级指针地址、字符串数组操作</li>
+<li>字符串指针：字符串指针定义、指针操作字符串、字符串遍历、字符串工具函数实现原理</li>
+</ul>
+<p><strong>直接跳过</strong>：指针冷门运算、老式指针兼容语法、纯理论指针推导</p>
+<p>### 第12章 动态内存分配（堆内存核心）</p>
+<p><strong>必学刚需知识</strong>：</p>
+<ul>
+<li>堆、栈、全局内存区核心区别（结合第9章存储类理解）</li>
+<li>核心函数：malloc、free 函数原型、参数、返回值、标准使用规范</li>
+<li>动态内存实操：一维动态数组、二维动态数组开辟与释放</li>
+<li>动态链表基础：节点结构体定义、节点开辟、增删改查基础逻辑</li>
+<li>内存问题排查：野指针成因与危害、内存泄漏场景、重复释放内存问题</li>
+</ul>
+<p><strong>直接跳过</strong>：calloc、realloc 冷门用法、内存分配底层源码理论</p>
+<p>### 第13章 C标准文件IO（Linux系统IO前置）</p>
+<p><strong>必学刚需知识</strong>：</p>
+<ul>
+<li>文件指针 FILE 结构体核心作用</li>
+<li>核心IO函数：fopen、fclose、fread、fwrite、fgets、fputs 标准用法</li>
+<li>文件打开权限：r/w/a/r+/w+/a+ 权限区别与实战选用规则</li>
+<li>缓冲区原理：用户态缓冲区、内核态缓冲区区别、IO缓冲机制对读写的影响</li>
+<li>文本文件读写实操：逐行读写、批量读写、文件内容覆盖与追加</li>
+</ul>
+<p><strong>直接跳过</strong>：格式化IO冷门参数、文件定位偏移复杂用法、临时文件操作</p>
+<p>### 第14章 结构体+联合体+枚举+位段+函数指针</p>
+<p><strong>前半段刚需：结构体、联合体、枚举、位段（驱动开发必备）</strong></p>
+<ul>
+<li>结构体：结构体定义、结构体变量、结构体初始化、结构体成员访问</li>
+<li>结构体指针：结构体指针传参、指针访问成员（-&gt;）、嵌套结构体</li>
+<li>联合体：共用内存原理、大小端适配场景、数据类型转换实战用法</li>
+<li>枚举：枚举定义、常量封装、代码状态标识实战使用</li>
+<li>位段：位域定义、内存位操作、寄存器配置底层应用（嵌入式/Linux驱动核心）</li>
+</ul>
+<p><strong>后半段刚需：函数指针与回调函数</strong></p>
+<ul>
+<li>函数指针定义、函数地址获取、函数指针变量赋值</li>
+<li>回调函数原理：函数指针作为函数参数、回调机制实现</li>
+<li>简易回调框架封装：解耦代码逻辑、通用功能封装实战</li>
+</ul>
+<p><strong>直接跳过</strong>：结构体内存对齐复杂理论、老式结构体兼容语法</p>
+<p>### 第16章 预处理+宏+条件编译+工程规范</p>
+<p><strong>必学刚需知识</strong>：</p>
+<ul>
+<li>宏定义：无参宏、带参宏定义与使用、宏与函数的区别</li>
+<li>条件编译：#ifdef / #ifndef / #else / #endif 核心语法与实战场景</li>
+<li>头文件保护宏：标准防重复包含宏写法（工程必备规范）</li>
+<li>多文件工程规范：.h头文件、.c源文件分工规则</li>
+<li>文件拆分原则：函数声明、宏定义、结构体定义放.h，函数实现放.c</li>
+</ul>
+<p><strong>直接跳过</strong>：预处理冷门指令、复杂宏嵌套语法、废弃预处理规则</p>
+<p>### 穿插复习 第9章 存储类&amp;多文件基础</p>
+<p><strong>必学刚需知识</strong>：</p>
+<ul>
+<li>四大存储类：auto、static、extern、register 核心特性（重点static、extern）</li>
+<li>static作用：局部变量静态化、全局变量/函数私有化</li>
+<li>extern作用：跨文件声明全局变量、声明外部函数</li>
+<li>内存分区：栈区、堆区、全局静态区、常量区内存特性</li>
+<li>多文件基础：跨文件函数调用、变量引用规则</li>
+</ul>
+<p>## 三、最终实战刚需知识汇总（核心能力清单）</p>
+<p>所有学习结束后，必须完全掌握的落地能力，无任何冗余：</p>
+<ol>
+<li>熟练运用各类指针，可独立完成字符串、数组的指针式操作</li>
+<li>掌握堆内存动态开辟与释放，能排查内存泄漏、野指针问题，手写动态链表</li>
+<li>熟练实现文件读写操作，理解IO缓冲区机制</li>
+<li>精通结构体、位段、枚举，可完成底层数据封装、寄存器位操作</li>
+<li>掌握函数指针与回调机制，具备基础代码解耦、框架封装能力</li>
+<li>熟练使用宏、条件编译，掌握标准多文件工程开发规范，可独立拆分项目文件</li>
+<li>清晰认知内存分区与存储类特性，适配Linux内存开发逻辑</li>
+</ol>
+<p>## 四、针对性防遗忘实用学习建议（解决学完就忘、记不牢、不会用）</p>
+<p>结合本次8天高强度实操学习特点，针对绝大多数人C语言<strong>学了就忘、看懂不会写、过两天归零</strong>的通病，整理一套可直接落地的学习规则，全程适配指针、内存、结构体、工程开发学习，从根源巩固记忆。</p>
+<p>### 1. 拒绝“看书看懂=学会”，坚持<strong>零抄写默写</strong></p>
+<p>这是防遗忘最核心的规则。你之前遗忘的核心原因是：被动看知识点、抄例题，大脑没有形成独立编码记忆。学习所有章节（指针、动态内存、文件IO、结构体）时，严格执行：<strong>看一遍原理 → 关掉文档/书本 → 独立手写代码 → 出错再复盘</strong>。</p>
+<p>尤其是指针、动态内存、函数指针这类抽象知识点，只要能独立敲出来、不看参考、一次跑通，记忆留存率直接提升80%，彻底避免“看懂了，手写就废，过两天就忘”的问题。</p>
+<p>### 2. 每章节强制做<strong>对比记忆</strong>，杜绝模糊混淆遗忘</p>
+<p>C语言最容易遗忘、混淆的全是成对知识点，模糊记忆是遗忘的根源，学习时必须当场对比总结，不堆积模糊知识点：</p>
+<ul>
+<li>指针章节：当场区分 <strong>指针数组/数组指针/二级指针</strong>，手写对比案例，记录一行核心区别</li>
+<li>内存章节：固定牢记 <strong>栈内存/堆内存</strong> 生命周期、申请释放规则</li>
+<li>文件IO：区分 <strong>缓冲区读写差异、不同打开权限</strong> 的使用场景</li>
+<li>工程章节：区分 <strong>static/extern</strong>、<strong>.h/.c文件分工</strong></li>
+</ul>
+<p>每学完一个模块，不用写长篇笔记，只写<strong>3行核心区别总结</strong>，考前、复盘快速过一遍，永久不混淆、不遗忘。</p>
+<p>### 3. 遵循<strong>当日学、当日复盘、次日复用</strong>记忆节奏</p>
+<p>遗忘的核心规律：新知识24小时内遗忘速度最快。适配你8天学习节奏，固定复盘规则：</p>
+<ul>
+<li>每晚结束：花15分钟，默写当天核心知识点+敲2个核心代码案例</li>
+<li>次日学习前：先用5分钟跑一遍昨日代码，不看笔记独立运行</li>
+</ul>
+<p>例如：昨天学完动态内存，今天学文件IO前，先独立手写一次malloc开辟+free释放，简单复盘即可，不用重学全套，即可牢牢锁住记忆，避免学新忘旧。</p>
+<p>### 4. 刻意制造<strong>错误调试记忆</strong>，比顺写代码更难忘</p>
+<p>顺利跑通的代码记忆很浅，<strong>报错、排错的记忆是长期记忆</strong>。完全贴合你的学习任务，刻意实操易错点：</p>
+<ul>
+<li>动态内存：故意不free制造内存泄漏、故意访问野指针看报错</li>
+<li>指针：故意写错指针数组和数组指针，编译报错后修正</li>
+<li>多文件工程：故意不写头文件保护宏，制造重复包含报错并解决</li>
+</ul>
+<p>调试过一次的错误，终身难忘，彻底解决“学完只会写标准答案，换场景就废”的问题。</p>
+<p>### 5. 所有知识点<strong>绑定场景记忆</strong>，拒绝纯理论背诵</p>
+<p>纯文字知识点最容易忘，绑定Linux/工程开发场景，记忆会形成条件反射：</p>
+<ul>
+<li>学指针：绑定“字符串处理、数组遍历、函数传参”场景</li>
+<li>学动态内存：绑定“链表、动态数组、工程可变内存”场景</li>
+<li>学位段/结构体：绑定“Linux驱动、寄存器配置、数据封装”场景</li>
+<li>学函数指针：绑定“回调解耦、通用函数框架”场景</li>
+<li>学预处理/多文件：绑定“大型项目工程规范、跨文件开发”场景</li>
+</ul>
+<p>每学一个知识点，清楚它<strong>在哪用、用来解决什么问题</strong>，就不会快速遗忘。</p>
+<p>### 6. 禁止“断层式学习”，保持知识点串联记忆</p>
+<p>你本次的学习顺序10→12→13→14→16是连贯的，严禁跳学、断更。C语言知识点是链式关联：指针支撑动态内存、动态内存支撑结构体链表、函数指针支撑工程框架、预处理支撑多文件开发。</p>
+<p>连贯学习会形成<strong>知识网络</strong>，单个知识点遗忘时，整体网络会帮你推导回忆，彻底告别零散、学一个忘一个的情况。</p>
+<p>### 7. 最终防遗忘杀手锏：8天结束<strong>综合Demo闭环</strong></p>
+<p>最后一天的综合刷题+多文件Demo是巩固记忆的关键，不要敷衍。将所有知识点串联进一个项目：<strong>指针操作+动态内存链表+结构体+文件IO存储+函数指针回调+多文件拆分+头文件保护</strong>全部整合。</p>
+<p>一次完整项目实操，会把8天零散知识点固化为<strong>永久实战能力</strong>，彻底解决反复学习、反复遗忘的恶性循环。</p>
+<h2 id="1">1数组</h2>
+<p>c中的数组需要初始化，否则会存储垃圾值，如下</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#define MAX 4
+int main()
+{
+    int a[MAX];//未初始化
+    for (int i = 0; i &lt; MAX; i++)
+    {
+        printf(&quot;a[%d] = %d\n&quot;, i, a[i]);
+    }
+    return 0;
+}
+</code></pre>
+<p><img alt="image-20260704132101780" src="C:\Users\30252\AppData\Roaming\Typora\typora-user-images\image-20260704132101780.png"></p>
+<p><img alt="image-20260704132116134" src="C:\Users\30252\AppData\Roaming\Typora\typora-user-images\image-20260704132116134.png"></p>
+<p>两次结果运行发现，未初始化的数组中的元素会出现未知的数值。</p>
+<p>对于初始化后，或者只初始化部分值，其他未赋值的元素会被初始化为0</p>
+<pre><code class="language-c">#define MAX 4
+int main()
+{
+    int a[MAX]={12};
+    for (int i = 0; i &lt; MAX; i++)
+    {
+        printf(&quot;a[%d] = %d\n&quot;, i, a[i]);
+    }
+    return 0;
+}
+</code></pre>
+<p><img alt="image-20260704132811152" src="C:\Users\30252\AppData\Roaming\Typora\typora-user-images\image-20260704132811152.png"></p>
+<p>使用const关键字修饰时，运行时无法修改数组中的值</p>
+<p><img alt="image-20260704133234853" src="C:\Users\30252\AppData\Roaming\Typora\typora-user-images\image-20260704133234853.png"></p>
+<p>2指针</p>
+<h2 id="_1">第一部分：基础一级指针（判断输出 + 画图）</h2>
+<h3 id="1_1">题 1</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+    int a = 20;
+    int *p = &amp;a;
+    *p = 66;
+    printf(&quot;a=%d\n&quot;, a);
+    printf(&quot;*p=%d\n&quot;, *p);
+    return 0;
+}
+</code></pre>
+<p>问题：输出结果是多少？画图说明内存变化。</p>
+<p>a=20    //a=99</p>
+<p>*p=66</p>
+<p>说明：<code>*p=66</code> 解引用指针 p，直接修改 a 内存里的数据。</p>
+<h3 id="2">题 2</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main() {
+    int x = 1, y = 99;
+    int *ptr = &amp;x;
+    ptr = &amp;y;
+    printf(&quot;%d&quot;, *ptr);
+    return 0;
+}
+</code></pre>
+<p>问题：输出多少？<code>ptr = &amp;y</code> 这一行做了什么（修改值还是修改指向）？</p>
+<p>输出：99</p>
+<p>修改了指针的指向，由原来的x地址改成指向y</p>
+<h2 id="_2">第二部分：函数传一级指针（修改普通变量）</h2>
+<h3 id="3">题 3</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void change(int *num) {
+    *num = 1000;
+}
+int main() {
+    int a = 10;
+    change(&amp;a);
+    printf(&quot;%d&quot;, a);
+    return 0;
+}
+</code></pre>
+<p>问题：输出结果？如果函数参数改成 <code>int num</code>，调用 <code>change(a)</code>，结果会变成多少？为什么？</p>
+<p>输出：1000</p>
+<p>10</p>
+<p>因为形参为指针时，修改的是该值的地址所在的内容，而当形参为一个普通变量时，传入的是一个值的副本，不会影响该值。</p>
+<h2 id="_3">第三部分：二级指针核心题（你最疑惑的修改指针指向）</h2>
+<h3 id="4">题 4（对标你原来的代码）</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void set(int **pp) {
+    int temp = 888;
+    *pp = &amp;temp;
+}
+int main() {
+    int a = 10;
+    int *p = &amp;a;
+    set(&amp;p);
+    printf(&quot;%d&quot;, *p);
+    return 0;
+}
+</code></pre>
+<p>问题：</p>
+<ol>
+<li><code>set(&amp;p)</code> 为什么不能写成 <code>set(p)</code>？</li>
+<li>函数里为什么写 <code>*pp = &amp;temp</code>，不是 <code>**pp = &amp;temp</code>？</li>
+<li>这段代码存在什么安全隐患？</li>
+</ol>
+<p>说明：</p>
+<p>pp 是<code>int**</code>二级指针，需要传入指针变量 p 的地址<code>&amp;p</code>；p 是<code>int*</code>类型，类型不匹配；</p>
+<p><code>*pp</code>等价于 main 里的 p，给 p 赋值新地址；<code>**pp</code>等价于 a，是 int 数字，不能存地址；</p>
+<p>temp 是函数局部变量，函数结束后销毁，p 变成悬垂野指针，输出随机垃圾值。</p>
+<h3 id="5">题 5</h3>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void func(int **pp) {
+    **pp = 500;
+}
+int main() {
+    int a = 10;
+    int *p = &amp;a;
+    func(&amp;p);
+    printf(&quot;a=%d&quot;, a);
+    return 0;
+}
+</code></pre>
+<p>问题：输出多少？<code>**pp = 500</code> 修改的是谁，和上一题 <code>*pp = 地址</code> 有什么本质区别？</p>
+<p>修改的是a</p>
+<p>说明：输出 a=500；</p>
+<p><code>**pp=500</code>：修改 p 指向的整型数据 a；</p>
+<p><code>*pp=地址</code>：修改指针 p 本身的指向，两个操作对象完全不同。</p>
+<h2 id="_4">第四部分：易混辨析选择题（检验概念）</h2>
+<h3 id="6">题 6 单选</h3>
+<pre><code class="language-c">int a = 10;
+int *p = &amp;a;
+</code></pre>
+<p>以下说法错误的是：</p>
+<p>A. <code>p</code> 存储变量 a 的内存地址</p>
+<p>B. <code>*p</code> 等价于 a 的值x</p>
+<p>C. <code>&amp;p</code> 类型是 <code>int**</code></p>
+<p>D. <code>int *p</code> 中的 * 代表解引用操作</p>
+<p>说明：</p>
+<p>定义时<code>int *p</code>的 * 只是类型标记，不是解引用。</p>
+<h3 id="7">题 7 单选</h3>
+<p>想要在函数内部修改 main 中一级指针<code>p</code>的指向（让 p 指向新变量），函数参数类型和传参方式正确的是：</p>
+<p>A. <code>void f(int *pp)</code> 调用 <code>f(p)</code></p>
+<p>B. <code>void f(int **pp)</code> 调用 <code>f(&amp;p)</code></p>
+<p>C. <code>void f(int pp)</code> 调用 <code>f(*p)</code></p>
+<p>D. <code>void f(int *pp)</code> 调用 <code>f(&amp;p)</code></p>
+<h2 id="_5">第五部分：代码改错</h2>
+<h3 id="8">题 8</h3>
+<p>找出下面代码所有错误并修正</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void set_ptr(int *pp) {
+    int b = 999;
+    pp = &amp;b;  //*pp=&amp;b;
+}
+int main() {
+    int a = 10;
+    int *p = &amp;a;
+    set_ptr(&amp;p);
+    printf(&quot;%d&quot;, *p);
+    return 0;
+}
+</code></pre>
+      </div>
+    </article>
+  </main>
+</div>
+<script src="../app.js"></script>
+</body>
+</html>
