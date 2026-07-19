@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 import os
 import re
 import shutil
@@ -1170,11 +1170,11 @@ JS = r"""
     var cover = document.getElementById("cover");
   if (cover) {
     var bgImages = [
-      "icon/bg1.png",
-      "icon/bg2.png",
-      "icon/bg3.png",
-      "icon/bg4.png",
-      "icon/bg5.png"
+      "icon/bg1.webp",
+      "icon/bg2.webp",
+      "icon/bg3.webp",
+      "icon/bg4.webp",
+      "icon/bg5.webp"
     ];
     var randomBg = bgImages[Math.floor(Math.random() * bgImages.length)];
 
